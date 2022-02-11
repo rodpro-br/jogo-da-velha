@@ -1,8 +1,10 @@
 var jogador, vencedor = null;
 var jogadorSelecionado = document.getElementById('jogador-selecionado');
 var vencedorSelecionado = document.getElementById('vencedor-selecionado');
+const JOGADOR_X = 'X';
+const JOGADOR_O = 'O';
 
-mudarJogador('X');
+mudarJogador(JOGADOR_X);
 
 function escolherQuadrado(id) {
     if (vencedor !== null) {
@@ -17,10 +19,10 @@ function escolherQuadrado(id) {
     quadrado.innerHTML = jogador;
     quadrado.style.color = '#000';
 
-    if (jogador === 'X') {
-        jogador = 'O';
+    if (jogador === JOGADOR_X) {
+        jogador = JOGADOR_O;
     } else {
-        jogador = 'X';
+        jogador = JOGADOR_X;
     }
 
     mudarJogador(jogador);
@@ -124,5 +126,5 @@ function reiniciar()
         quadrado.innerHTML = '-';
     }
 
-    mudarJogador('X');
+    mudarJogador(JOGADOR_X);
 }
